@@ -25,9 +25,10 @@
       <nav class="nav">
         <ul class="nav-list">
           <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <a href="#branches">Solutions</a>
 
           <li class="has-dropdown">
-            <a href="#branches">Branches</a>
             <ul class="dropdown">
               <li><a href="#legal">Daleon Legal Solutions</a></li>
               <li><a href="#marketing">Daleon Marketing Solutions</a></li>
@@ -35,11 +36,7 @@
               <li><a href="#bpo">Daleon BPO Solutions</a></li>
             </ul>
           </li>
-
-          <li><a href="#services">Services</a></li>
-          <li><a href="#industries">Industries We Serve</a></li>
-          <li><a href="#case-studies">Case Studies</a></li>
-          <li><a href="#about">About Us</a></li>
+          <li><a href="#case-studies">Resourses</a></li>
         </ul>
 
         <a href="#contact" class="btn btn-small btn-outline">Contact / Book a Call</a>
@@ -55,43 +52,59 @@
   <main>
     <!-- HERO -->
  <section class="hero" id="home">
-  <!-- Background video -->
-  <video class="hero-bg-video" autoplay muted loop playsinline>
-    <source src="videos/reunion.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <!-- Overlay encima del video -->
-  <div class="hero-overlay"></div>
-
-  <!-- Contenido -->
-  <div class="container hero-inner">
-    <div class="hero-content">
-      <h1>Nearshore Talent & Business Solutions for Fast-Growing Companies</h1>
+  <div class="hero-content-wrapper container">
+    <div class="hero-left">
+      <h1>
+        Scale Your Business with Nearshore Experts
+      </h1>
+      <p class="hero-subtitle">
+        Book a call and discover how to integrate Legal, Marketing, Sales or BPO teams 
+        from Latin America into your operations.
+      </p>
 
       <div class="hero-cta">
-        <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
-        <a href="#branches" class="btn btn-outline">Explore Our Branches</a>
+        <a href="#contact" class="btn btn-primary">Contact / Book a Call</a>
       </div>
     </div>
+
+    <div class="hero-right">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="videos/reunion.mp4" type="video/mp4">
+      </video>
+      
+    </div>
+  </div>
+
+  <!-- FONDO GRADIENTE -->
+  <div class="hero-bg"></div>
+</section>
+
+<!-- DALEON STATEMENT SECTION -->
+<section class="statement-section">
+  <div class="statement-inner">
+     <img src="img/ISOTIPO.png" alt="Daleon Group isotipo" class="isotipo-img" />
+    
+
+    <h2 class="statement-title">
+      Driven by a talent defined by Leadership
+    </h2>
+
+    <a href="#about" class="statement-link">
+      Learn More →
+    </a>
+
   </div>
 </section>
 
-    <!-- BRANCHES / WHAT WE DO -->
+    <!-- BRANCHES / Solutions -->
     <section class="section" id="branches">
       <img src="img/deco-about.png" class="section-decoration" alt="">
       <div class="container">
-        <h2 class="section-title">What We Do</h2>
-        <p class="section-lead">
-          Daleon Group brings together four specialized units under one direction: Legal Solutions, Marketing Solutions,
-          Sales Solutions, and BPO Solutions. One nearshore partner, multiple ways to scale your business.
-        </p>
-
+        <h2 class="section-title">Solutions Suit</h2>
         <div class="cards-grid cards-grid-4">
           <!-- LEGAL -->
           <article class="card" id="legal">
-            <h3>Daleon Legal Solutions</h3>
-            <p class="card-tagline">Remote Legal Staffing & Legal BPO</p>
+            <h3 class="highlight-title-blue"><span>Daleon Legal Solutions</span></h3>
             <ul class="card-list">
               <li>Intake Specialists</li>
               <li>Case Managers</li>
@@ -104,8 +117,7 @@
 
           <!-- MARKETING -->
           <article class="card" id="marketing">
-            <h3>Daleon Marketing Solutions</h3>
-            <p class="card-tagline">Digital Marketing for Law Firms & Businesses</p>
+            <h3 class="highlight-title-red"><span>Daleon Marketing Solutions</span> </h3>
             <ul class="card-list">
               <li>Social media management</li>
               <li>Branding & creative design</li>
@@ -118,8 +130,7 @@
 
           <!-- SALES -->
           <article class="card" id="sales">
-            <h3>Daleon Sales Solutions</h3>
-            <p class="card-tagline">BDRs, SDRs & Inside Sales Teams</p>
+            <h3 class="highlight-title-red"><span>Daleon Sales Solutions</span></h3>
             <ul class="card-list">
               <li>Prospecting & lead generation</li>
               <li>Outbound & inbound follow-up</li>
@@ -132,8 +143,7 @@
 
           <!-- BPO -->
           <article class="card" id="bpo">
-            <h3>Daleon BPO Solutions</h3>
-            <p class="card-tagline">Back-Office & Business Support</p>
+            <h3 class="highlight-title-blue"><span>Daleon BPO Solutions </span></h3>
             <ul class="card-list">
               <li>Virtual assistants & admin support</li>
               <li>Data entry & reporting</li>
