@@ -98,17 +98,18 @@ body {
 }
 
 .section-title {
-  font-size: 2.15rem;
-  font-weight: 300;
-  letter-spacing: 0.02em;
-  margin-bottom: 1.25rem;
+  font-size: 1.85rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
+
+
 
 .section-lead {
   max-width: 700px;
   margin-bottom: 2.5rem;
   font-size: 1.02rem;
-  color: #403a36;
+  color: #ffffff;
 }
 
 /* =========================
@@ -396,7 +397,7 @@ body {
 
 .cards-grid {
   display: grid;
-  gap: 1.75rem;
+  gap: 2rem;
   margin-top: 2.25rem;
 }
 
@@ -406,7 +407,7 @@ body {
 
 #branches {
   background-color: #211C1C; /* Beige corporativo Daleon */
-  padding: 4rem 0;
+  padding:3rem 0 4rem;
   position: relative;
 }
 
@@ -441,7 +442,8 @@ body {
 #branches .cards-grid-4 .card {
   background-color: #E8E1D8;
   border: 1px solid rgba(0,0,0,0.08);
-  padding: 2.2rem;
+  min-height: 260px;
+  padding: 1.6rem;
   border-radius: 0;
   box-shadow: none;
   transition: all 0.25s ease;
@@ -503,6 +505,8 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0; /* Cards pegadas entre sí */
+  max-width: 900px;     /* limita el ancho del grid */
+  margin: 0 auto;       /* centrado */
 }
 
 /* CARD CUADRADA CORPORATIVA */
@@ -574,6 +578,11 @@ body {
   }
 }
 
+#branches .container {
+  max-width: 1100px;   /* antes usabas 1400+ */
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
 
 /* =========================
    FEATURE GRID (WHY DALEON)
@@ -630,54 +639,91 @@ body {
 }
 
 /* =========================
-   KPIs
+   KPIs — ESTILO TIPO LEGAL SOFT
    ========================= */
-.kpi-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.4rem;
-  margin-top: 2.2rem;
-}
 
-.kpi-item {
-  background-color: var(--color-light);
-  border-radius: 1.5rem;
-  padding: 1.6rem;
+#kpis {
+  background-color: #ffffff;
   text-align: center;
-  border: 1px solid rgba(33, 28, 28, 0.05);
 }
 
+/* Fila de KPIs en horizontal */
+.kpi-row {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0;                        /* sin espacios entre ellos */
+  max-width: 900px;
+  margin: 2.5rem auto 0;
+}
+
+/* Cada KPI */
+.kpi-item {
+  padding: 0 2.5rem;
+  position: relative;
+}
+
+/* 🔥 Línea vertical divisoria solo desde el segundo */
+.kpi-item + .kpi-item {
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* NÚMERO GRANDE EN AZUL */
 .kpi-number {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #066BAD;     /* Azul Daleon */
   display: block;
-  font-size: 1.7rem;
-  font-weight: 600;
-  color: var(--color-bold-red);
+  white-space: nowrap;
+  line-height: 1;
   margin-bottom: 0.5rem;
 }
 
+
+/* TEXTO UNDER */
 .kpi-label {
-  font-size: 0.92rem;
-  color: #59514c;
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #4a4542;
+  max-width: 240px;
+  margin: 0 auto;
 }
 
-/* =========================
-   TESTIMONIALS
-   ========================= */
-.testimonial-card {
-  background-color: var(--color-light);
-  border-radius: 1.5rem;
-  padding: 1.6rem;
-  border-left: 4px solid var(--color-bold-red);
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .kpi-row {
+    flex-wrap: wrap;
+    row-gap: 1.8rem;
+  }
+
+  .kpi-item {
+    width: 50%;
+    margin-bottom: 1rem;
+  }
+
+  .kpi-item + .kpi-item {
+    border-left: none;
+  }
 }
 
-.testimonial-text {
-  font-style: italic;
-  margin-bottom: 1rem;
-}
+@media (max-width: 600px) {
+  .kpi-item {
+    width: 100%;
+  }
 
-.testimonial-author {
-  font-size: 0.9rem;
-  color: #5c5550;
+  .kpi-item + .kpi-item {
+    border-left: none;
+  }
+}
+.kpi-number {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #066BAD;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;   /* ⬅️ ESTA ES LA CLAVE */
 }
 
 /* =========================
@@ -696,13 +742,188 @@ body {
   border-radius: 1.25rem;
   border: 1px solid rgba(33, 28, 28, 0.06);
 }
+/* =========================
+   DALEON VS IN-HOUSE – ABOUT PAGE
+   ========================= */
+
+.compare-section {
+  background: linear-gradient(
+    135deg,
+    #B1000A 0%,
+    #6b2420 30%,
+    #3d2020 65%,
+    #211C1C 100%
+  );
+  color: #E8E1D8;
+  padding: 5rem 0;
+}
+
+
+.compare-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.compare-header .section-title {
+  color: #E8E1D8;
+  margin-bottom: 0.75rem;
+}
+
+.compare-header .section-lead {
+  max-width: 38rem;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* GRID 2 COLUMNAS */
+.compare-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+/* TARJETAS */
+.compare-card {
+  padding: 2rem 2.2rem;
+}
+
+/* CUADRO BLANCO (DALEON) */
+.compare-card-primary {
+  background: #E8E1D8;
+  color: #211C1C;
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* COLUMNA DERECHA SIN CUADRO (MISMO FONDO) */
+.compare-card-secondary {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #E8E1D8;
+}
+
+/* TÍTULOS DE AMBAS COLUMNAS CENTRADOS */
+.compare-title {
+  font-size: 1.85rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+
+/* LISTAS */
+.compare-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.1rem;
+}
+
+.compare-list h4 {
+  font-size: 0.98rem;
+  margin-bottom: 0.25rem;
+}
+
+.compare-list p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+/* LISTAS BASE */
+.compare-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.1rem;
+}
+
+.compare-list h4 {
+  font-size: 0.98rem;
+  margin-bottom: 0.25rem;
+}
+
+.compare-list p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+/* POSICIÓN DE ICONO PARA AMBAS COLUMNAS */
+.compare-card-primary .compare-list li,
+.compare-card-secondary .compare-list li {
+  position: relative;
+  padding-left: 2.4rem;
+}
+
+/* CHULOS AZULES – DALEON */
+.compare-card-primary .compare-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 999px;
+  background: #066BAD;
+  color: #ffffff;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* EQUIS ROJAS – IN-HOUSE */
+.compare-card-secondary .compare-list li::before {
+  content: "✕";
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 999px;
+  background: #F43216;
+  color: #ffffff;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .compare-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .compare-card {
+    padding: 1.75rem 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .compare-section {
+    padding: 4rem 0;
+  }
+
+  .compare-header {
+    margin-bottom: 2.5rem;
+  }
+}
+
 
 /* =========================
    FINAL CTA
    ========================= */
 .final-cta {
   background:
-    radial-gradient(circle at top right, rgba(6, 107, 173, 0.4), #f43216 45%, #b1000a);
+    radial-gradient(circle at top right, rgba(6, 107, 173, 0.4), #F43216 45%, #b1000a);
   color: var(--color-light);
   text-align: center;
 }
@@ -942,8 +1163,19 @@ body {
 }
 
 .contact-item a:hover {
-  text-decoration: underline;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      150deg,
+      rgba(33, 28, 28, 0.92) 0%,
+      rgba(33, 28, 28, 0.82) 40%,
+      rgba(177, 0, 10, 0.35) 100%
+    );
 }
+
+
 
 /* SOCIAL ICONS */
 .contact-socials {
@@ -1212,8 +1444,8 @@ body {
 }
 
 .cs-inner .section-title {
-  font-size: 2.3rem;
-  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  margin-bottom: 1.2rem;
 }
 
 .cs-inner .section-lead {
@@ -1237,6 +1469,7 @@ body {
     font-size: 1.9rem;
   }
 }
+
 /* =========================
    INDUSTRIES GALLERY
 ========================= */
@@ -1266,7 +1499,7 @@ body {
   min-width: 260px;
   padding: 1.8rem;
   background-color: #ffffff;
-  border-radius: 1.2rem;
+  border-radius: 1.3rem;
   box-shadow: 0 12px 22px rgba(0,0,0,0.08);
   border: 1px solid rgba(33,28,28,0.07);
 
@@ -1278,7 +1511,7 @@ body {
 /* TITULO */
 .industry-card h3 {
   font-size: 1.3rem;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.75rem;
   color: #211c1c;
 }
 
@@ -1332,14 +1565,19 @@ body {
 
 /* Títulos */
 .cards-grid-4 .card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.6rem;
+  font-size: 3rem;        /* tamaño del texto */
+  font-weight: 700;
+  padding: 0.8rem 1.4rem; /* tamaño del subrayado */
+  display: inline-block;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
+
 
 /* Tagline */
 .cards-grid-4 .card-tagline {
-  font-size: 0.95rem;
-  margin-bottom: 1.3rem;
+  font-size: 1rem;
+  margin-bottom: 2rem;
   color: #444;
 }
 
@@ -1365,12 +1603,32 @@ body {
 
 h1 { font-size: 2.9rem; }
 h2 { font-size: 2.2rem; }
-h3 { font-size: 1.4rem; }
+/*h3 { font-size: 1.4rem; }*/
 p  { font-size: 1.08rem; }
 
 html {
   font-size: 110%;
 }
+/* =========================
+   SCROLL REVEAL – SOLUTIONS
+========================= */
+
+/* Estado inicial: ocultas y un poquito abajo */
+#branches .cards-grid-4 .card {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Cuando se vuelven visibles al hacer scroll */
+#branches .cards-grid-4 .card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 
 /* =========================
@@ -1436,7 +1694,7 @@ html {
   line-height: 1.25;
   margin-bottom: 3rem;
   font-weight: 600;
-  color: #000000;
+  color: #211c1c;
 }
 
 .statement-link {
@@ -1481,7 +1739,6 @@ html {
   border-radius: 6px;
   display: inline;
 }
-
 /* =========================
    COLORES ESPECIALES PARA 2 CARDS
    ========================= */
@@ -1492,3 +1749,905 @@ html {
 #bpo {
   background-color: #ffffff !important;  
 }
+
+/* =========================
+   CAREERS — Premium Daleon
+========================= */
+
+.careers {
+  background: linear-gradient(120deg, #211C1C 0%, #B1000A 100%);
+  padding: 6rem 0;
+  color: #fff;
+}
+
+.careers-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.careers-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 1.8rem;
+}
+
+.careers-text {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  opacity: 0.92;
+  margin-bottom: 2rem;
+}
+
+.careers-questions {
+  margin: 2.5rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid #E8E1D8;
+}
+
+.careers-questions p {
+  font-size: 1.25rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.careers-btn {
+  display: inline-block;
+  margin-top: 2.5rem;
+  background-color: #E8E1D8;
+  color: #211C1C;
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.careers-btn:hover {
+  background-color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* =============================
+   CAREERS – LAYOUT Y ESTILO
+============================= */
+
+.careers {
+  /* fondo degradado Daleon */
+  background: radial-gradient(circle at top left, #B1000A 0%, #211C1C 55%, #000000 100%);
+  padding: 4rem 0 4.5rem;   /* sección un poco más pequeña */
+  color: #ffffff;
+}
+
+/* Grid 2 columnas: texto izquierda, fotos derecha */
+.careers-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  column-gap: 3rem;
+  align-items: center;
+}
+
+/* BLOQUE DE TEXTO */
+.careers-copy {
+  max-width: 640px;
+}
+
+.careers-kicker {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.careers-title {
+  font-size: 2.4rem;
+  margin: 0.7rem 0 1.2rem;
+}
+
+.careers-text {
+  font-size: 1.03rem;
+  line-height: 1.7;
+  opacity: 0.94;
+  margin-bottom: 0.7rem;
+}
+
+/* Preguntas resaltadas */
+.careers-question {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 0.35rem;
+  margin-bottom: 0.15rem;
+}
+
+/* Botón */
+.careers-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 0.9rem 2.3rem;
+  border-radius: 999px;
+  background-color: #E8E1D8;
+  color:  #211C1C;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.98rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.careers-btn:hover {
+  background-color: #B1000A;
+  color:  #E8E1D8;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+
+/* COLUMNA DERECHA – IMÁGENES */
+.careers-media {
+  display: flex;
+  flex-direction: column;
+  gap: 0;              /* 🔥 juntas, sin espacio */
+}
+
+.careers-photo {
+  width: 100%;
+  height: 230px;       /* controlamos altura para que no se deformen */
+  object-fit: cover;   /* recorta sin aplastar la imagen */
+  border-radius: 0;    /* sin bordes redondeados */
+  display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .careers-grid {
+    grid-template-columns: 1fr;
+    row-gap: 2.5rem;
+  }
+
+  /* imágenes arriba en móvil (opcional) */
+  .careers-media {
+    order: -1;
+  }
+
+  .careers-photo {
+    height: 210px;
+  }
+
+  .careers-title {
+    font-size: 2rem;
+  }
+}
+/* Barrita vertical elegante para el bloque de texto */
+.careers-copy {
+  position: relative;
+  padding-left: 1.6rem;
+}
+
+.careers-copy::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  width: 3px;
+  border-radius: 999px;
+  background: linear-gradient(#ffffff, #cac5bd);
+  opacity: 0.95;
+}
+
+
+/* =========================
+   FADE-UP STAGGER
+========================= */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Estados inicial/final para la animación de Careers */
+
+.careers-line {
+  opacity: 0;
+  transform: translateY(26px) scale(0.98);
+  filter: blur(6px);
+  transition:
+    opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1),
+    transform 0.7s cubic-bezier(0.19, 1, 0.22, 1),
+    filter 0.7s ease;
+}
+
+.careers-line.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* ============================
+   ICONOS PARA TITULOS DE SOLUTIONS
+============================ */
+
+/* ICONOS CON IMAGENES PARA TITULOS */
+
+#branches .card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  font-size: 1.35rem;
+}
+
+#legal h3::before,
+#marketing h3::before,
+#sales h3::before,
+#bpo h3::before {
+  content: "";
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Iconos específicos */
+#legal h3::before {
+  background-image: url("img/legal.png");
+}
+
+#marketing h3::before {
+  background-image: url("img/marketing.png");
+}
+
+#sales h3::before {
+  background-image: url("img/sales.png");
+}
+
+#bpo h3::before {
+  background-image: url("img/BPO.png");
+}
+
+/* =========================
+   GROWTH SECTION
+   ========================= */
+
+.growth-section {
+  background: #211c1c; /* negro Daleon */
+  color: var(--color-light);
+  padding: 5rem 0;
+}
+
+.growth-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+/* LADO IZQUIERDO */
+
+.growth-title {
+  font-size: 2.3rem;
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+
+.growth-title span {
+  color: #B1000A; /* rojo Daleon brillante */
+}
+
+.growth-text {
+  max-width: 460px;
+  font-size: 1.02rem;
+  color: rgba(232, 225, 216, 0.85);
+  margin-bottom: 1.8rem;
+}
+
+.growth-btn {
+  padding-inline: 1.9rem;
+  background-color:  #B1000A;
+  color: #E8E1D8;
+}
+.growth-btn:hover {
+  background-color: #ffffff;
+  color:  #000000;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+
+/* LADO DERECHO: CARDS */
+
+.growth-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.growth-card {
+  background: rgba(232, 225, 216, 0.06);          /* panel suave */
+  border: 1px solid rgba(232, 225, 216, 0.18);
+  border-radius: 1.1rem;
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+              border-color 0.18s ease, background 0.18s ease;
+}
+
+.growth-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  color: #ffffff;
+}
+
+.growth-card p {
+  font-size: 0.95rem;
+  color: rgba(232, 225, 216, 0.85);
+}
+
+/* Hover sutil y profesional */
+.growth-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.30);
+  border-color: rgba(244, 50, 22, 0.6);
+  background: rgba(232, 225, 216, 0.08);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .growth-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .growth-left {
+    text-align: left;
+  }
+
+  .growth-text {
+    max-width: none;
+  }
+}
+/* FINAL CTA — VERSION CASE STUDIES */
+.final-cta.cs-style {
+  position: relative;
+  padding: 6rem 0;
+  color: #E8E1D8;
+  text-align: center;
+  overflow: hidden;
+}
+/* Video background */
+.final-cta.cs-style .cs-bg-video {
+  opacity: 0.30; /* antes 1 */
+
+}
+
+
+.final-cta.cs-style .cs-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      150deg,
+      rgba(33, 28, 28, 0.92) 0%,
+      rgba(33, 28, 28, 0.82) 30%,
+      rgba(177, 0, 9, 0.192) 100%
+    );
+}
+
+
+.final-cta-title {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin-bottom: 1rem;
+  color: #E8E1D8;
+}
+
+.final-cta-subtitle {
+  max-width: 40rem;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
+  color: #E8E1D8;
+  opacity: 0.95;
+}
+.final-cta.cs-style .btn-light {
+  background-color: #E8E1D8;
+  color: #211C1C;
+  padding: 0.9rem 2rem;
+  border: none;
+  transition: 0.25s ease;
+}
+/* Centrado completo del contenido del FINAL CTA */
+.final-cta.cs-style {
+  display: flex;
+  justify-content: center;   /* Centra horizontal */
+  align-items: center;       /* Centra vertical */
+  text-align: center;        /* Centra el texto */
+  padding: 6rem 0;           /* Puedes ajustar si quieres más espacio */
+}
+
+.final-cta.cs-style .cs-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem; /* Espacio entre título, texto y botón */
+}
+
+/* =========================
+   CASE STUDIES – DALEON FINAL ÚNICO
+   ========================= */
+
+.case-studies {
+  padding: 4rem 0 2.5rem;
+  background-color: #ffffff;
+  
+}
+
+.case-studies-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+/* TEXTO IZQUIERDA */
+.case-studies-copy .section-title {
+  margin-bottom: 1rem;
+  color: #211C1C;
+}
+
+.case-studies-text {
+  max-width: 32rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  color: #211C1C;
+}
+
+/* BOTÓN */
+.case-studies .btn.btn-primary {
+  padding-inline: 2.5rem;
+}
+
+/* COLLAGE 3 FOTOS DERECHA */
+.case-studies-media {
+  position: relative;
+  display: grid;
+  /* columnas más compactas y sin aire artificial entre ellas */
+  grid-template-columns: 1fr 0.8fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 0;      /* que no haya extra separación horizontal */
+  row-gap: 0.25rem;   /* un pelín de aire entre las dos pequeñas */
+  height: 260px;
+}
+
+.case-photo {
+  width: 180%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* acercar visualmente las fotos entre sí */
+.large-photo {
+  grid-row: 1 / 3;
+  grid-column: 1 / 2;
+  margin-right: -50px;   /* mueve la grande un poco hacia las pequeñas */
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 960px) {
+  .case-studies-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .case-studies-media {
+    height: 220px; /* MÁS PEQUEÑAS EN PANTALLAS MEDIAS */
+    max-width: 520px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .case-studies {
+    padding: 3.5rem 0 2.5rem;
+  }
+
+}
+/* =========================
+   ABOUT – LAYOUT GENERAL (NUEVO)
+   ========================= */
+
+.about-main {
+  background: radial-gradient(circle at top left, #3a1917 0%, #211C1C 45%, #181111 100%);
+  color: #E8E1D8;
+  padding: 5rem 0 5rem;
+}
+
+.about-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.about-row-title {
+  font-size: 1.7rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-row-subtitle {
+  max-width: 40rem;
+  opacity: 0.85;
+  margin-bottom: 2rem;
+}
+
+.about-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  color: #F43216;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.about-text {
+  font-size: 0.97rem;
+  line-height: 1.7;
+  opacity: 0.88;
+}
+
+/* =========================
+   BLOQUE 1 – INTRO
+   ========================= */
+
+.about-intro-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-intro-text .about-title {
+  margin-bottom: 1rem;
+}
+
+.about-intro-photo {
+  width: 100%;
+  height: 340px;
+  border-radius: 18px;
+  border: 1px solid rgba(232,225,216,0.16);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 20px 55px rgba(0,0,0,0.65);
+}
+
+/* parallax se anima por JS */
+.about-intro-photo.parallax {
+  transform-origin: center center;
+  transition: transform 0.4s ease-out;
+}
+
+/* =========================
+   BLOQUE 2 – FLOW
+   ========================= */
+
+.about-flow-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, auto);
+  gap: 1.75rem 2.25rem;
+}
+
+.flow-card {
+  background: #1b1515;
+  border-radius: 16px;
+  border: 1px solid rgba(232,225,216,0.12);
+  padding: 1.6rem 1.8rem;
+  box-shadow: 0 16px 42px rgba(0,0,0,0.48);
+  font-size: 0.94rem;
+}
+
+.flow-card h3 {
+  font-size: 1.04rem;
+  margin-bottom: 0.4rem;
+}
+
+/* flechas */
+.flow-arrow {
+  position: absolute;
+  background: #F43216;
+}
+
+/* derecha */
+.flow-arrow-right {
+  top: 22%;
+  left: 50%;
+  width: 90px;
+  height: 2px;
+  transform: translateX(-50%);
+}
+.flow-arrow-right::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  top: -4px;
+  border-style: solid;
+  border-width: 6px 0 6px 10px;
+  border-color: transparent transparent transparent #F43216;
+}
+
+/* abajo */
+.flow-arrow-down {
+  top: 50%;
+  right: 23%;
+  width: 2px;
+  height: 90px;
+}
+.flow-arrow-down::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: -5px;
+  border-style: solid;
+  border-width: 10px 6px 0 6px;
+  border-color: #F43216 transparent transparent transparent;
+}
+
+/* izquierda */
+.flow-arrow-left {
+  bottom: 18%;
+  left: 50%;
+  width: 90px;
+  height: 2px;
+  transform: translateX(-50%);
+}
+.flow-arrow-left::after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: -4px;
+  border-style: solid;
+  border-width: 6px 10px 6px 0;
+  border-color: transparent #F43216 transparent transparent;
+}
+
+/* =========================
+   BLOQUE 3 – MISSION / VISION
+   ========================= */
+
+.about-mv-card {
+  background: #1b1515;
+  border-radius: 20px;
+  border: 1px solid rgba(232,225,216,0.14);
+  padding: 2.2rem 2.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 2.25rem;
+  box-shadow: 0 22px 60px rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+}
+
+.about-mv-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.about-mv-title {
+  font-size: 1.12rem;
+  margin-bottom: 0.45rem;
+}
+
+.about-mv-divider {
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(232,225,216,0.5), transparent);
+}
+
+/* =========================
+   BLOQUE 4 – COMPARE (Daleon vs In-House)
+   ========================= */
+
+.about-compare {
+  margin-top: 0.5rem;
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem;
+}
+
+.compare-col {
+  border-radius: 18px;
+  padding: 1.9rem 2rem;
+  border: 1px solid rgba(232,225,216,0.16);
+  box-shadow: 0 20px 55px rgba(0,0,0,0.55);
+  background: rgba(0,0,0,0.4);
+}
+
+.compare-col-daleon {
+  background: linear-gradient(135deg, rgba(244,50,22,0.22), rgba(6,107,173,0.16));
+}
+
+.compare-badge {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 1.2rem;
+  background: #E8E1D8;
+  color: #211C1C;
+}
+
+.badge-outline {
+  background: transparent;
+  color: #E8E1D8;
+  border: 1px solid rgba(232,225,216,0.5);
+}
+
+.compare-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.compare-item .label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+/* iconos check / cross */
+.compare-item {
+  position: relative;
+  padding-left: 1.7rem;
+}
+
+.compare-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+}
+
+.compare-item.check::before {
+  color: #2ecc71;
+  background: rgba(46,204,113,0.08);
+}
+
+.compare-item.check::after {
+  content: "✔";
+  position: absolute;
+  left: 0.27rem;
+  top: 0.14rem;
+  font-size: 0.7rem;
+}
+
+.compare-item.cross::before {
+  color: #F43216;
+  background: rgba(244,50,22,0.08);
+}
+
+.compare-item.cross::after {
+  content: "✕";
+  position: absolute;
+  left: 0.3rem;
+  top: 0.12rem;
+  font-size: 0.7rem;
+}
+
+/* =========================
+   BLOQUE 5 – WHY / PROMISE
+   ========================= */
+
+.about-promise-block {
+  margin-top: 1.6rem;
+  padding: 1.7rem 1.9rem;
+  border-radius: 16px;
+  border: 1px solid rgba(232,225,216,0.16);
+  background: rgba(0,0,0,0.35);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.55);
+}
+
+/* =========================
+   RESPONSIVE ABOUT
+   ========================= */
+
+@media (max-width: 960px) {
+  .about-intro-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-intro-photo {
+    height: 280px;
+  }
+
+  .about-mv-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.6rem;
+  }
+
+  .about-mv-divider {
+    display: none;
+  }
+
+  .compare-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .about-main {
+    padding: 4rem 0 4rem;
+  }
+
+  .about-intro-inner {
+    gap: 2rem;
+  }
+
+  .about-row-title {
+    font-size: 1.45rem;
+  }
+}
+
+/* =========================
+   SCROLL REVEAL – GLOBAL
+   ========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  filter: blur(6px);
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.7s ease-out;
+}
+
+/* cuando entra en viewport */
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.flow-card,
+.about-mv-card,
+.about-why .about-promise {
+  backdrop-filter: blur(10px);
+}
+
+/* micro-hover muy sutil en tarjetas */
+.flow-card:hover,
+.about-mv-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.65);
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+}
+.about-intro-photo.parallax {
+  transform-origin: center center;
+  transition: transform 0.4s ease-out;
+}
+
