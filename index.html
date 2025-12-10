@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Favicon Daleon -->
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -13,78 +16,107 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- HEADER / NAVBAR -->
-  <header class="header">
-    <div class="container header-inner">
-      <div class="logo">
-        <a href="#home" onclick="setTimeout(() => window.location.reload(), 50)">
-        <img src="img/Daleon group blanco.png" alt="Daleon Group logo" class="logo-img" />
-        </a>
-      </div>
+ <!-- ========================================================= -->
+<!-- HEADER — Daleon Unified Navigation (Clean + Professional) -->
+<!-- ========================================================= -->
+<header class="header">
 
-      <nav class="nav">
-        <ul class="nav-list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <a href="#branches">Solutions</a>
+  <div class="container header-inner">
 
-          <li class="has-dropdown">
-            <ul class="dropdown">
-              <li><a href="#legal">Daleon Legal Solutions</a></li>
-              <li><a href="#marketing">Daleon Marketing Solutions</a></li>
-              <li><a href="#sales">Daleon Sales Solutions</a></li>
-              <li><a href="#bpo">Daleon BPO Solutions</a></li>
-            </ul>
-          </li>
-          <li><a href="#careers">Careers</a></li>
-          <li><a href="#case-studies">case studies</a></li>
-        </ul>
-
-        <a href="#contact" class="btn btn-small btn-outline">Contact / Book a Call</a>
-      </nav>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-      </button>
+    <!-- Logo -->
+    <div class="logo">
+      <a href="index.html#home">
+        <img src="img/Daleon logo.png" alt="Daleon Group logo" class="logo-img">
+      </a>
     </div>
-  </header>
 
-  <main>
-    <!-- HERO -->
- <section class="hero" id="home">
+    <!-- MAIN NAVIGATION -->
+    <nav class="nav">
+      <ul class="nav-list">
+
+        <!-- Home -->
+        <li>
+          <a href="index.html#home">Home</a>
+        </li>
+
+        <!-- About Us -->
+        <li>
+          <a href="about.html">About Us</a>
+        </li>
+
+        <!-- Solutions (scroll to section in Home) -->
+        <li>
+          <a href="index.html#branches">Solutions</a>
+        </li>
+
+        <!-- Careers -->
+        <li>
+          <a href="index.html#careers">Careers</a>
+        </li>
+
+        <!-- Case Studies -->
+        <li>
+          <a href="index.html#case-studies">Case Studies</a>
+        </li>
+
+      </ul>
+
+      <!-- CTA BUTTON -->
+      <a href="index.html#contact" class="btn btn-small btn-outline">Contact / Book a Call</a>
+    </nav>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+
+ <!-- =========================================== -->
+<!-- HERO — Main Landing Section (Daleon Hero)   -->
+<!-- =========================================== -->
+<section class="hero" id="home">
+
   <div class="hero-content-wrapper container">
-    <div class="hero-left">
+
+    <!-- LEFT SIDE — Text Content -->
+    <div class="hero-left reveal" data-reveal-delay="0.05s">
       <h1>
         Scale Your Business with Nearshore Experts
       </h1>
+
       <p class="hero-subtitle">
         Book a call and discover how to integrate Legal, Marketing, Sales or BPO teams 
         from Latin America into your operations.
       </p>
 
       <div class="hero-cta">
-        <a href="#contact" class="btn btn-primary">Contact / Book a Call</a>
+        <a href="#contact" class="btn btn-primary growth-btn">Contact / Book a Call</a>
       </div>
     </div>
 
-    <div class="hero-right">
+    <!-- RIGHT SIDE — Video -->
+    <div class="hero-right reveal" data-reveal-delay="0.15s">
       <video class="hero-video" autoplay muted loop playsinline>
-        <source src="videos/reunion.mp4" type="video/mp4">
+        <source src="videos/reunion.mp4" type="video/mp4" />
       </video>
-      
     </div>
   </div>
 
-  <!-- FONDO GRADIENTE -->
+  <!-- Background Gradient -->
   <div class="hero-bg"></div>
 </section>
 
-<!-- DALEON STATEMENT SECTION -->
+
+<!-- ================================================== -->
+<!-- STATEMENT — Daleon Identity Phrase (below hero)    -->
+<!-- ================================================== -->
 <section class="statement-section">
-  <div class="statement-inner">
-     <img src="img/ISOTIPO.png" alt="Daleon Group isotipo" class="isotipo-img" />
-    
+  <div class="statement-inner reveal" data-reveal-delay="0.10s">
+
+    <img src="img/ISOTIPO.png" alt="Daleon Group icon" class="isotipo-img" />
 
     <h2 class="statement-title">
       Driven by a talent defined by Leadership
@@ -97,6 +129,10 @@
   </div>
 </section>
 
+
+ <!-- =============================================== -->
+<!-- SOLUTIONS / BRANCHES — Daleon 2x2 Services Grid -->
+<!-- =============================================== -->
     <!-- BRANCHES / Solutions -->
     <section class="section" id="branches">
       <img src="img/deco-about.png" class="section-decoration" alt="">
@@ -107,11 +143,10 @@
           <article class="card" id="legal">
             <h3 class="highlight-title-blue"><span>Daleon Legal Solutions</span></h3>
             <ul class="card-list">
-              <li>Intake Specialists</li>
-              <li>Case Managers</li>
-              <li>Paralegals & Legal Assistants</li>
-              <li>Medical record requests & follow-ups</li>
-              <li>Document drafting & legal back office</li>
+              <li>Bilingual legal professionals trained under U.S.
+                 standards support intake, case management,
+                  and litigation workflows—helping firms scale capacity with precision,
+                   efficiency, and consistency.</li>
             </ul>
             <a href="branches.html#legal" class="card-cta">Explore Legal Solutions →</a>
           </article>
@@ -120,11 +155,9 @@
           <article class="card" id="marketing">
             <h3 class="highlight-title-red"><span>Daleon Marketing and sales Solutions</span> </h3>
             <ul class="card-list">
-              <li>Social media management</li>
-              <li>Branding & creative design</li>
-              <li>Paid ads (Meta, Google, LinkedIn)</li>
-              <li>Content creation & copywriting</li>
-              <li>Video editing & motion graphics</li>
+              <li>SWe drive measurable growth through BDR support, acquisition strategies,
+                 and full digital marketing operations—building predictable,
+                  conversion-focused pipelines for your business.</li>
             </ul>
             <a href="branches.html#marketing" class="card-cta">Explore Marketing Solutions →</a>
           </article>
@@ -133,11 +166,9 @@
           <article class="card" id="sales">
             <h3 class="highlight-title-red"><span>Daleon Tech Solutions</span></h3>
             <ul class="card-list">
-              <li>Prospecting & lead generation</li>
-              <li>Outbound & inbound follow-up</li>
-              <li>Pipeline management</li>
-              <li>Appointment setting</li>
-              <li>CRM handling (HubSpot, Salesforce, etc.)</li>
+              <li>Specialized IT and helpdesk support that ensures stability, 
+                security, and speed—turning technology into a reliable engine 
+                for business continuity and growth..</li>
             </ul>
             <a href="branches.html#sales" class="card-cta">Explore Tech Solutions →</a>
           </article>
@@ -146,11 +177,8 @@
           <article class="card" id="bpo">
             <h3 class="highlight-title-blue"><span>Daleon BPO Solutions </span></h3>
             <ul class="card-list">
-              <li>Virtual assistants & admin support</li>
-              <li>Data entry & reporting</li>
-              <li>Back-office operations</li>
-              <li>Customer service & support</li>
-              <li>General BPO for SMBs & startups</li>
+              <li>High-performance nearshore talent enhances administrative, customer service, 
+                finance, and data operations—reducing costs while improving productivity and operational clarity.</li>
             </ul>
             <a href="branches.html#bpo" class="card-cta">Explore BPO Solutions →</a>
           </article>
@@ -158,14 +186,21 @@
       </div>
     </section>
 
-    <!-- KPIs / RESULTS -->
+
+<!-- =============================== -->
+<!-- KPIs / RESULTS — Impact in Numbers -->
+<!-- =============================== -->
 <section class="section" id="kpis">
   <div class="container">
-    <h2 class="section-title-2">Impact in Numbers</h2>
+
+    <h2 class="section-title-2 reveal" data-reveal-delay="0.05s">
+      Impact in Numbers
+    </h2>
 
     <div class="kpi-row">
+
       <!-- 1) 60% -->
-      <div class="kpi-item">
+      <div class="kpi-item reveal" data-reveal-delay="0.10s">
         <span class="kpi-number" data-target="60" data-type="percent">
           60%
         </span>
@@ -175,7 +210,7 @@
       </div>
 
       <!-- 2) 3x -->
-      <div class="kpi-item">
+      <div class="kpi-item reveal" data-reveal-delay="0.16s">
         <span class="kpi-number" data-target="3" data-type="times">
           3x
         </span>
@@ -185,7 +220,7 @@
       </div>
 
       <!-- 3) 98% -->
-      <div class="kpi-item">
+      <div class="kpi-item reveal" data-reveal-delay="0.22s">
         <span class="kpi-number" data-target="98" data-type="percent">
           98%
         </span>
@@ -195,7 +230,7 @@
       </div>
 
       <!-- 4) 72 Hours -->
-      <div class="kpi-item">
+      <div class="kpi-item reveal" data-reveal-delay="0.28s">
         <span class="kpi-number" data-target="72" data-type="hours-text">
           72 Hours
         </span>
@@ -203,21 +238,29 @@
           Average time to shortlist qualified candidates
         </span>
       </div>
+
+    </div> <!-- /kpi-row -->
+
+  </div> <!-- /container -->
 </section>
 
-<!-- GROWTH STAGES / VALUE SECTION -->
+
+<!-- ======================================= -->
+<!-- GROWTH STAGES / VALUE SECTION           -->
+<!-- ======================================= -->
 <section class="section growth-section" id="growth">
   <div class="container growth-grid">
 
-    <!-- LADO IZQUIERDO -->
-    <div class="growth-left">
+    <!-- LEFT SIDE -->
+    <div class="growth-left reveal" data-reveal-delay="0.05s">
       <h2 class="growth-title">
         Committed to Your Growth<br>
         at <span>Every Stage</span>
       </h2>
 
       <p class="growth-text">
-        No matter where you are in your journey, Daleon Group is here to support you with nearshore teams that adapt to your way of working.
+        No matter where you are in your journey, Daleon Group is here to support you with nearshore teams
+        that adapt to your way of working.
       </p>
 
       <a href="#contact" class="btn btn-primary growth-btn">
@@ -225,31 +268,37 @@
       </a>
     </div>
 
-    <!-- LADO DERECHO: CARDS -->
+    <!-- RIGHT SIDE: CARDS -->
     <div class="growth-right">
-      <article class="growth-card">
+
+      <article class="growth-card reveal" data-reveal-delay="0.10s">
         <h3>Worried about onboarding?</h3>
         <p>Your virtual staff seamlessly adapt to your workflow with no delay.</p>
       </article>
 
-      <article class="growth-card">
+      <article class="growth-card reveal" data-reveal-delay="0.16s">
         <h3>Need help with your unique challenges?</h3>
         <p>We’ll assess your needs and develop personalized strategies just for you.</p>
       </article>
 
-      <article class="growth-card">
+      <article class="growth-card reveal" data-reveal-delay="0.22s">
         <h3>Not looking for a long-term commitment?</h3>
         <p>No lock-in contracts, so you're free to scale up or down anytime.</p>
       </article>
+
     </div>
 
   </div>
 </section>
 
-<!-- DALEON VS IN-HOUSE STAFF -->
+
+<!-- ===================================== -->
+<!-- DALEON VS IN-HOUSE STAFF — Compare    -->
+<!-- ===================================== -->
 <section class="section compare-section" id="daleon-vs-inhouse">
   <div class="container">
-    <div class="compare-header">
+
+    <div class="compare-header reveal">
       <h2 class="section-title">Daleon vs. In-House Staff</h2>
       <p class="section-lead">
         Scale smarter—Daleon handles the workforce, you focus on growth.
@@ -257,8 +306,9 @@
     </div>
 
     <div class="compare-grid">
+
       <!-- COLUMNA DALEON -->
-      <article class="compare-card compare-card-primary">
+      <article class="compare-card compare-card-primary reveal" data-reveal-delay="0.10s">
         <h3 class="compare-title">Daleon Group</h3>
 
         <ul class="compare-list">
@@ -286,7 +336,7 @@
       </article>
 
       <!-- COLUMNA IN-HOUSE -->
-      <article class="compare-card compare-card-secondary">
+      <article class="compare-card compare-card-secondary reveal" data-reveal-delay="0.16s">
         <h3 class="compare-title">In-House Staff</h3>
 
         <ul class="compare-list">
@@ -312,104 +362,129 @@
           </li>
         </ul>
       </article>
+
     </div>
   </div>
 </section>
 
+<!-- =========================== -->
+<!-- CASE STUDIES — NEW LAYOUT   -->
+<!-- =========================== -->
 <section class="case-studies" id="case-studies">
-  <div class="container case-studies-grid">
+  <div class="container">
 
-    <!-- IZQUIERDA: TEXTO -->
-    <div class="case-studies-copy">
-      <h2 class="section-title">Case Studies</h2>
-      <p class="case-studies-text">
-        See how Daleon teams have transformed legal, marketing, sales, and BPO operations
-        across the U.S. Full written case studies are coming soon, but here’s a closer look
-        at the people and processes behind our results.
-      </p>
+    <h2 class="section-title center reveal">Case Studies</h2>
+    <p class="case-studies-text center reveal" data-reveal-delay="0.05s">
+      Explore how Daleon talent and structured processes have transformed legal, marketing,
+      sales, and operations for U.S. businesses. Full written case studies coming soon —
+      here’s a preview.
+    </p>
 
-      <a href="#contact" class="btn btn-primary">Schedule a Conversation</a>
+    <!-- GRID DE 2 IMÁGENES + TEXTO -->
+    <div class="case-studies-cards">
+
+      <!-- CARD 1 -->
+      <div class="case-card reveal" data-reveal-delay="0.1s">
+        <img src="img/case1.jpg" alt="Case Study 1" class="case-card-img">
+        <div class="case-card-content">
+          <h3>Legal Operations Transformation</h3>
+          <p>
+            A PI law firm scaled intake, case management, and documentation while reducing
+            operational delays by 60% using Daleon-trained bilingual legal staff.
+          </p>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="case-card reveal" data-reveal-delay="0.15s">
+        <img src="img/case2.jpg" alt="Case Study 2" class="case-card-img">
+        <div class="case-card-content">
+          <h3>Marketing & Sales Acceleration</h3>
+          <p>
+            A growing agency unlocked predictable lead flow and brand consistency with a dedicated
+            Daleon marketing & SDR pod, doubling monthly qualified opportunities.
+          </p>
+        </div>
+      </div>
+
     </div>
 
-    <!-- DERECHA: 3 IMÁGENES TIPO COLLAGE -->
-    <div class="case-studies-media">
-      <img src="img/edu.jpg" class="case-photo large-photo" alt="case-photo">
-
-    </div>
+   
 
   </div>
 </section>
 
-<!-- CAREERS -->
+<!-- ================== -->
+<!-- CAREERS SECTION    -->
+<!-- ================== -->
 <section class="careers" id="careers">
   <div class="container careers-grid">
 
     <!-- IZQUIERDA — TEXTO -->
     <div class="careers-copy">
-      <span class="careers-kicker fade-up" data-delay="0s">CAREERS</span>
+      <span class="careers-kicker reveal" data-reveal-delay="0.05s">CAREERS</span>
 
-      <h2 class="careers-title fade-up" data-delay="0.05s">
+      <h2 class="careers-title reveal" data-reveal-delay="0.10s">
         Launch Your Career at Daleon
       </h2>
 
-      <p class="careers-text fade-up" data-delay="0.1s">
+      <p class="careers-text reveal" data-reveal-delay="0.14s">
         At Daleon Group, we’re not just building services — we’re building a new
         standard. We develop AI-empowered, highly trained teams that integrate 
         seamlessly into the daily operations of U.S. companies.
       </p>
 
-      <p class="careers-text fade-up" data-delay="0.15s">
+      <p class="careers-text reveal" data-reveal-delay="0.18s">
         Our people apply real expertise supported by cutting-edge technology to 
         transform how businesses operate across Legal, Marketing, Sales, BPO, 
         and Technology.
       </p>
 
-      <p class="careers-question fade-up" data-delay="0.20s">Are you hungry for growth?</p>
-      <p class="careers-question fade-up" data-delay="0.25s">Do you value excellence and best practices?</p>
-      <p class="careers-question fade-up" data-delay="0.30s">Ready to create real impact from day one?</p>
+      <p class="careers-question reveal" data-reveal-delay="0.22s">Are you hungry for growth?</p>
+      <p class="careers-question reveal" data-reveal-delay="0.26s">Do you value excellence and best practices?</p>
+      <p class="careers-question reveal" data-reveal-delay="0.30s">Ready to create real impact from day one?</p>
 
-      <p class="careers-text fade-up" data-delay="0.35s">
+      <p class="careers-text reveal" data-reveal-delay="0.34s">
         At Daleon, you’ll sharpen your skills, earn trust through performance, 
         and contribute to meaningful work — for clients, for the company, and 
         for your own career.
       </p>
-
-      <a href="#contact" class="careers-btn fade-up" data-delay="0.40s">
+      
+      <a href="https://forms.cloud.microsoft/r/AGNFwHJ9rt" class="careers-btn reveal" data-reveal-delay="0.38s">
         Begin Your Journey with Daleon
       </a>
     </div>
 
     <!-- DERECHA — 2 IMÁGENES SIN BORDES -->
     <div class="careers-media">
-      <img src="img/carreers 1.jpg" class="careers-photo fade-up" data-delay="0.15s" alt="">
-      <img src="img/carreers 2.jpg" class="careers-photo fade-up" data-delay="0.25s" alt="">
+      <img src="img/carreers 1.jpg" class="careers-photo reveal" data-reveal-delay="0.18s" alt="Daleon team at work">
+      <img src="img/carreers 2.jpg" class="careers-photo reveal" data-reveal-delay="0.26s" alt="Daleon office environment">
     </div>
 
   </div>
 </section>
 
- <!-- FINAL CTA (nuevo estilo tipo Case Studies) -->
-<section class="final-cta cs-style">
-  
-  <!-- Background video -->
-  <video class="cs-bg-video" autoplay muted loop playsinline>
-    <source src="videos/saludos.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
 
-  <!-- Overlay -->
-  <div class="cs-overlay"></div>
+<!-- ========================================= -->
+<!-- FINAL CTA — Background Video (cs-style)   -->
+<!-- ========================================= -->
+<section class="final-cta cs-style final-cta-dark">
+  <div class="cs-inner container">
+    <h2 class="final-cta-title fade-up" data-delay="0s">
+      Scale Your Business with Nearshore Experts
+    </h2>
 
-  <!-- Content -->
-  <div class="container cs-inner">
-    <h2 class="final-cta-title">Scale Your Business with Nearshore Experts</h2>
-    <p class="final-cta-subtitle">
+    <p class="final-cta-subtitle fade-up" data-delay="0.08s">
       Book a call and discover how to integrate Legal, Marketing, Sales, or BPO teams 
       from Latin America into your operations.
     </p>
-    <a href="#contact" class="btn btn-light">Contact / Book a Call</a>
-  </div>
 
+    <a href="#contact"
+       class="btn btn-light fade-up"
+       data-delay="0.16s">
+      Contact / Book a Call
+    </a>
+  </div>
 </section>
 
   <!-- FOOTER / CONTACT -->
@@ -430,7 +505,7 @@
             <span class="contact-icon"></span>
             <div>
               <strong>Phone:</strong><br />
-              <a href="tel:+573001234567">+57 300 123 4567</a>
+              <a href="tel:(210) 971 6795">+1 (210) 971 6795</a>
             </div>
           </div>
 
@@ -438,25 +513,23 @@
             <span class="contact-icon"></span>
             <div>
               <strong>Email:</strong><br />
-              <a href="mailto:info@daleongroup.com">info@daleongroup.com</a>
+              <a href="mailto:info@daleongroup.com">sales@daleongroup.com</a>
             </div>
           </div>
 
           <!-- SOCIAL ICONS -->
           <div class="contact-socials">
-            <a href="#" class="social-icon whatsapp" aria-label="WhatsApp">
-              <img src="img/whatsapp.png" alt="WhatsApp" />
-            </a>
-            <a href="#" class="social-icon instagram" aria-label="Instagram">
+            
+            <a href="https://www.instagram.com/daleon.group?igsh=ZHN6bGFpcDZka29v" class="social-icon instagram" aria-label="Instagram">
               <img src="img/instagram.png" alt="Instagram" />
             </a>
-            <a href="#" class="social-icon facebook" aria-label="Facebook">
+            <a href="https://www.facebook.com/share/1EsoNfrHv6/?mibextid=wwXIfr" class="social-icon facebook" aria-label="Facebook">
               <img src="img/facebook.png" alt="Facebook" />
             </a>
-            <a href="#" class="social-icon linkedin" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/daleon-group/" class="social-icon linkedin" aria-label="LinkedIn">
               <img src="img/linkedin.png" alt="LinkedIn" />
             </a>
-            <a href="#" class="social-icon calendly" aria-label="Calendly">
+            <a href="https://outlook.office.com/book/DaleonMarketingSales@daleongroup.com/" class="social-icon calendly" aria-label="Calendly">
               <img src="img/calendario.png" alt="Calendly" />
             </a>
           </div>
@@ -484,16 +557,17 @@
               I agree to the use and processing of my personal data.
             </label>
 
-            <button type="submit" class="btn btn-primary full">Send</button>
+            <button type="submit" class="btn btn-primary growth-btn-send">Send</button>
           </form>
         </div>
       </div>
     </section>
 
     <!-- BLACK BAR BEFORE FOOTER GRID -->
-    <div class="footer-end"></div>
+<div class="footer-end" ></div>
 
     <!-- LOWER CORPORATE FOOTER -->
+  
     <div class="container footer-grid">
       <div class="footer-col">
         <h3>Daleon Group</h3>
@@ -507,8 +581,8 @@
         <h4>Branches</h4>
         <ul>
           <li><a href="branches.html#legal">Daleon Legal Solutions</a></li>
-          <li><a href="branches.html#marketing">Daleon Marketing Solutions</a></li>
-          <li><a href="branches.html#sales">Daleon Sales Solutions</a></li>
+          <li><a href="branches.html#marketing">Daleon Marketing & Sales Solutions</a></li>
+          <li><a href="branches.html#sales">Daleon Tech Solutions</a></li>
           <li><a href="branches.html#bpo">Daleon BPO Solutions</a></li>
         </ul>
       </div>
@@ -526,9 +600,9 @@
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li>Email: <a href="mailto:info@daleongroup.com">info@daleongroup.com</a></li>
+          <li>Email: <a href="mailto:info@daleongroup.com">sales@daleongroup.com</a></li>
           <li><a href="#">Book a Call (Calendly)</a></li>
-          <li><a href="#">LinkedIn: Company Profile</a></li>
+          <li><a href="#">LinkedIn: Daleon Group LLC</a></li>
         </ul>
       </div>
     </div>

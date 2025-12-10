@@ -1,3 +1,14 @@
+// script.js
+// ====================================================================
+// Daleon Group – Frontend Interactions
+// - Navbar mobile
+// - Contact form → mailto
+// - Scroll animations (.fade-up, .reveal)
+// - Solutions cards stagger
+// - KPI counters
+// - About parallax
+// ====================================================================
+
 document.addEventListener("DOMContentLoaded", () => {
   /* =========================
      NAVBAR – MOBILE TOGGLE
@@ -6,10 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const nav = document.querySelector(".nav");
 
   if (navToggle && nav) {
+    // Abrir / cerrar menú móvil
     navToggle.addEventListener("click", () => {
       nav.classList.toggle("nav-open");
     });
 
+    // Cerrar al hacer click en cualquier link del menú
     const navLinks = nav.querySelectorAll(".nav-list a");
     navLinks.forEach((link) => {
       link.addEventListener("click", () => {
@@ -49,13 +62,14 @@ document.addEventListener("DOMContentLoaded", () => {
           `Enviado desde el formulario de contacto de Daleon Group.`
       );
 
-      const mailtoLink = `mailto:info@daleongroup.com?subject=${subject}&body=${body}`;
+      const mailtoLink = `mailto:sales@daleongroup.com?subject=${subject}&body=${body}`;
       window.location.href = mailtoLink;
     });
   }
 
   /* =========================
-     FADE-UP GENERICO (.fade-up)
+     SCROLL ANIMATION – .fade-up
+     (para elementos que usen data-delay)
      ========================= */
   const fadeEls = document.querySelectorAll(".fade-up");
 
@@ -68,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const delay = el.dataset.delay || "0s";
             el.style.transitionDelay = delay;
             el.classList.add("is-visible");
-            obs.unobserve(el);
+            obs.unobserve(el); // solo una vez
           }
         });
       },
@@ -79,43 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-     CAREERS – ANIMACIÓN ESCALONADA
-     ========================= */
-  const careersSection = document.querySelector(".careers");
-  if (careersSection) {
-    const textBlock = careersSection.querySelector(".careers-text");
-    const imageBlock = careersSection.querySelector(".careers-images");
-
-    if (textBlock) {
-      const lines = [
-        ...textBlock.children,
-        ...(imageBlock ? Array.from(imageBlock.querySelectorAll("img")) : []),
-      ];
-
-      lines.forEach((el) => el.classList.add("careers-line"));
-
-      const careersObserver = new IntersectionObserver(
-        (entries, obs) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              lines.forEach((el, index) => {
-                setTimeout(() => {
-                  el.classList.add("is-visible");
-                }, index * 120);
-              });
-              obs.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.25 }
-      );
-
-      careersObserver.observe(careersSection);
-    }
-  }
-
-  /* =========================
      SOLUTIONS – CARDS SCROLL REVEAL
+     (#branches .cards-grid-4 .card)
      ========================= */
   const solutionCards = document.querySelectorAll("#branches .cards-grid-4 .card");
   if (solutionCards.length) {
@@ -126,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
         (entries, obs) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
+              // Efecto stagger: una card tras otra
               solutionCards.forEach((card, index) => {
                 setTimeout(() => {
                   card.classList.add("is-visible");
@@ -144,15 +124,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ========================
      KPI COUNTER ANIMATION
+     (Impact in Numbers)
      ======================== */
   function animateKPIs() {
     const kpisSection = document.getElementById("kpis");
     const counters = document.querySelectorAll(".kpi-number[data-target]");
 
+    // Si no existe la sección o no hay counters, no hacemos nada
     if (!kpisSection || !counters.length) return;
 
     let alreadyRun = false;
-    const duration = 1600;
+    const duration = 1600; // ms
 
     function startCounting() {
       if (alreadyRun) return;
@@ -173,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
             case "hours-text":
               return value + " Hours";
             case "text":
-              return value;
+              return value; // durante la animación muestra solo el número
             default:
               return value;
           }
@@ -189,6 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (progress < 1) {
             requestAnimationFrame(update);
           } else {
+            // Al final, restauramos el texto original (por si lleva sufijos especiales)
             counter.textContent = originalText;
           }
         }
@@ -197,6 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
+    // Disparamos el conteo cuando la sección entra en viewport
     const kpiObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -212,19 +196,22 @@ document.addEventListener("DOMContentLoaded", () => {
     kpiObserver.observe(kpisSection);
   }
 
-  // 👇 Llamamos la animación de KPIs
+  // Lanzamos los KPIs
   animateKPIs();
 
   /* =========================
      SCROLL REVEAL – .reveal
+     (uso global en Home, About, etc.)
      ========================= */
   const revealEls = document.querySelectorAll(".reveal");
 
   if (revealEls.length) {
-    // aplicar delay desde data-reveal-delay
+    // Aplicar delay desde data-reveal-delay (si existe)
     revealEls.forEach((el) => {
       const delay = el.dataset.revealDelay;
-      if (delay) el.style.transitionDelay = delay;
+      if (delay) {
+        el.style.transitionDelay = delay;
+      }
     });
 
     const revealObserver = new IntersectionObserver(
@@ -232,7 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("reveal-visible");
-            obs.unobserve(entry.target);
+            obs.unobserve(entry.target); // solo una vez por elemento
           }
         });
       },
@@ -243,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-     PARALLAX – FOTO ABOUT
+     PARALLAX – FOTO ABOUT (.about-intro-photo.parallax)
      ========================= */
   const parallaxEl = document.querySelector(".about-intro-photo.parallax");
 
@@ -252,9 +239,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const rect = parallaxEl.getBoundingClientRect();
       const center = window.innerHeight / 2;
       const distance = rect.top + rect.height / 2 - center;
-      const maxShift = 12;
+      const maxShift = 12; // px máx. de desplazamiento
       const shift = Math.max(Math.min(distance * -0.06, maxShift), -maxShift);
+
       parallaxEl.style.transform = `translateY(${shift}px)`;
     });
   }
 });
+

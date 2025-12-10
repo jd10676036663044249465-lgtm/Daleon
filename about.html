@@ -1,231 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us | Daleon Group</title>
-
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-about">
 
-  <!-- HEADER (igual al de index, pero About Us activo) -->
+  
+  <!-- HEADER / NAVBAR -->
   <header class="header">
     <div class="container header-inner">
-      <div class="logo">
-        <a href="index.html">
-          <img src="img/Daleon group blanco.png" alt="Daleon Group logo" class="logo-img">
-        </a>
-      </div>
+      <!-- Logo -->
+    <div class="logo">
+      <a href="index.html#home">
+         <img src="img/Daleon logo.png" alt="Daleon Group logo" class="logo-img">
+      </a>
+    </div>
 
       <nav class="nav">
         <ul class="nav-list">
           <li><a href="index.html#home">Home</a></li>
-          <li><a href="index.html#branches">Solutions</a></li>
-          <li><a href="index.html#services">Why Daleon</a></li>
-          <li><a href="index.html#industries">Industries We Serve</a></li>
-          <li><a href="about.html" class="active">About Us</a></li>
+           <li><a href="about.html">About Us</a></li>
+             <li>
+                 <a href="index.html#branches">Solutions</a> </li>
+
+           <li><a href="index.html#careers">careers</a></li>
+
+          <li><a href="index.html#case-studies">Case Studies</a></li>
         </ul>
 
         <a href="index.html#contact" class="btn btn-small btn-outline">Contact / Book a Call</a>
       </nav>
-
+      
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span><span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
   </header>
 
-  <main id="top">
-    <!-- HERO ABOUT -->
-    <section class="page-hero">
-      <div class="container">
-        <h1>About Daleon Group</h1>
-        <p class="page-hero-subtitle">
-          We are a nearshore conglomerate connecting specialized talent in Latin America with
-          U.S. law firms, startups and growing companies, through Legal, Marketing, Sales and BPO solutions.
-        </p>
-      </div>
-    </section>
 
- <!-- ABOUT NARRATIVE -->
-<section class="section about-main">
-  <div class="container about-layout">
+  <main>
 
-    <!-- BLOQUE 1: WHO WE ARE -->
-    <section class="about-intro reveal" data-reveal-delay="0s">
-      <div class="about-intro-inner">
-        <div class="about-intro-text">
-          <span class="about-kicker">Who We Are</span>
-          <h2 class="about-title">A Nearshore Ecosystem Built for Growth</h2>
-
-          <p class="about-text lead">
-            Daleon Group is a business ecosystem born in Colombia and strategically expanded into the U.S. market.
-          </p>
-
-          <p class="about-text">
-            We connect Latin American talent with U.S. law firms, startups and companies through specialized Legal,
-            Marketing, Sales and BPO solutions — all aligned to structure operations and unlock growth.
+    <!-- Subpage Hero -->
+    <section class="subpage-hero about-hero">
+      <div class="container subpage-hero-inner">
+        <div class="subpage-hero-text">
+          <p class="eyebrow">About Daleon Group</p>
+          <h1>Driven by talent.<br>Defined by leadership.</h1>
+          <p class="subpage-hero-desc">
+            Daleon Group is a business ecosystem born in Colombia and strategically expanded
+            into the U.S. market. We build a bridge of talent, technology, and structured
+            processes between Latin America and the most demanding firms in the United States.
           </p>
         </div>
-
-        <div class="about-intro-photo parallax"
-          style="background-image: url('img/about.jpg');">
+        <div class="subpage-hero-meta">
+          <div class="meta-item">
+            <span class="meta-label">Headquarters</span>
+            <span class="meta-value">Colombia · Serving U.S. Market</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Focus</span>
+            <span class="meta-value">Legal, Marketing, BPO &amp; Sales</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Model</span>
+            <span class="meta-value">Nearshore, bilingual, performance-driven</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- BLOQUE 2: HOW DALEON HAS GROWN -->
-    <section class="about-row about-flow reveal" data-reveal-delay="0.05s">
-      <h2 class="about-row-title">How Daleon Has Grown</h2>
-      <p class="about-row-subtitle">
-        From an idea in Colombia to a structured nearshore partner for U.S. law firms, businesses, and startups.
+    <!-- ABOUT – WHO WE ARE + STORY -->
+  <section class="section about-section">
+    <div class="container about-layout">
+
+    <!-- COLUMNA IZQUIERDA: WHO WE ARE + ESSENCE -->
+    <div class="about-copy about-copy-lined reveal" data-reveal-delay="0.02s">
+
+
+      <h2>Who we are</h2>
+
+      <p class="about-lead">
+        Daleon Group is a business ecosystem born in Colombia and strategically expanded into the U.S. market. 
+        We build a bridge of talent, technology, and structured processes between Latin America and the most 
+        demanding firms in the United States.
       </p>
 
-      <div class="about-flow-grid">
-        <article class="flow-card reveal" data-reveal-delay="0.08s">
-          <h3>Founded in Colombia</h3>
-          <p>We started as a focused legal staffing project, training bilingual talent for U.S. Personal Injury firms.</p>
-        </article>
-
-        <article class="flow-card reveal" data-reveal-delay="0.14s">
-          <h3>First U.S. Clients</h3>
-          <p>Small firms trusted us to solve urgent operational gaps — intake, case management, back office.</p>
-        </article>
-
-        <article class="flow-card reveal" data-reveal-delay="0.20s">
-          <h3>Expansion & Structure</h3>
-          <p>We systematized recruitment, training, QA, and leadership — turning services into repeatable playbooks.</p>
-        </article>
-
-        <article class="flow-card reveal" data-reveal-delay="0.26s">
-          <h3>Multi-Unit Ecosystem</h3>
-          <p>Daleon Legal, Marketing & Sales, BPO, and Tech now operate as one strategic nearshore growth partner.</p>
-        </article>
-
-        <span class="flow-arrow flow-arrow-right"></span>
-        <span class="flow-arrow flow-arrow-down"></span>
-        <span class="flow-arrow flow-arrow-left"></span>
-      </div>
-    </section>
-
-    <!-- BLOQUE 3: MISSION / VISION -->
-    <section class="about-row reveal" data-reveal-delay="0.08s">
-      <div class="about-mv-card">
-        <div class="about-mv-column">
-          <span class="about-kicker">Mission</span>
-          <h3 class="about-mv-title">To build teams capable of transforming companies.</h3>
-          <p class="about-text">
-            Our mission is to provide highly trained talent, standardized processes, and a strong operational backbone
-            so any organization can operate faster, smarter, and with less friction.
-          </p>
-          <p class="about-text">
-            We create systems, not improvisations. We deliver solutions, not patches. We drive growth, not dependency.
-          </p>
-        </div>
-
-        <div class="about-mv-divider"></div>
-
-        <div class="about-mv-column">
-          <span class="about-kicker">Vision</span>
-          <h3 class="about-mv-title">
-            To become the most trusted Latin American conglomerate for U.S. law firms, businesses, and startups.
-          </h3>
-          <p class="about-text">
-            Recognized for transforming operations, professionalizing teams, and redefining what a nearshore partner can accomplish.
-          </p>
-          <p class="about-text">
-            We aspire to be the headquarters of talent, leadership, and operational discipline in Latin America.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- BLOQUE 4: DALEON VS IN-HOUSE STAFF -->
-    <section class="about-row about-compare reveal" data-reveal-delay="0.1s">
-      <h2 class="about-row-title">Daleon vs. In-House Staff</h2>
-      <p class="about-row-subtitle">
-        Scale smarter — Daleon handles the workforce, you focus on growth.
+      <p>
+        What started as a boutique project focused on legal staffing quickly evolved into a multidisciplinary 
+        conglomerate comprised of four specialized units:
       </p>
 
-      <div class="compare-grid">
-        <!-- Columna Daleon -->
-        <div class="compare-col compare-col-daleon">
-          <div class="compare-badge">Daleon Group</div>
-          <ul class="compare-list">
-            <li class="compare-item check">
-              <span class="label">Significant Cost Efficiency</span>
-              <p>Save up to 60% annually compared to local hires.</p>
-            </li>
-            <li class="compare-item check">
-              <span class="label">Fast Deployment</span>
-              <p>Start with your vetted professional in as little as 72 hours.</p>
-            </li>
-            <li class="compare-item check">
-              <span class="label">U.S.-Trained Bilingual Talent</span>
-              <p>Specialized in intake, legal ops, marketing, sales, BPO, and IT support.</p>
-            </li>
-            <li class="compare-item check">
-              <span class="label">Built to Scale</span>
-              <p>Add or replace staff seamlessly across any vertical.</p>
-            </li>
-            <li class="compare-item check">
-              <span class="label">Fully Managed by Daleon</span>
-              <p>We handle HR, payroll, compliance, training, performance monitoring, and support.</p>
-            </li>
-          </ul>
-        </div>
+      <ul class="about-units">
+        <li>Daleon Legal Solutions</li>
+        <li>Daleon Marketing &amp; Sales Solutions</li>
+        <li>Daleon BPO Solutions</li>
+        <li>Daleon Tech Solutions</li>
+      </ul>
 
-        <!-- Columna In-House -->
-        <div class="compare-col compare-col-inhouse">
-          <div class="compare-badge badge-outline">In-House Staff</div>
-          <ul class="compare-list">
-            <li class="compare-item cross">
-              <span class="label">Higher Overhead</span>
-              <p>Salaries, benefits, equipment, and office costs increase total spend.</p>
-            </li>
-            <li class="compare-item cross">
-              <span class="label">Slow Hiring Cycles</span>
-              <p>Recruitment and vetting can take weeks or even months.</p>
-            </li>
-            <li class="compare-item cross">
-              <span class="label">Requires Internal Training</span>
-              <p>Your team must onboard, train, and monitor performance.</p>
-            </li>
-            <li class="compare-item cross">
-              <span class="label">Limited Scalability</span>
-              <p>Growth demands more budget, more management, and more risk.</p>
-            </li>
-            <li class="compare-item cross">
-              <span class="label">Fully Managed by You</span>
-              <p>You assume all administrative, HR, legal, and operational responsibilities.</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- BLOQUE 5: WHY WE EXIST / PROMISE -->
-    <section class="about-row about-why reveal" data-reveal-delay="0.12s">
-      <h2 class="about-row-title">Why Daleon Exists</h2>
-      <p class="about-text">
-        The legal and business landscape in the U.S. changed. Speed, competition, and technology now demand smarter structures,
-        stronger teams, and nearshore partners that behave like real strategic allies.
+      <p>
+        Our essence is simple yet powerful: develop talent, structure operations, and transform ordinary teams 
+        into extraordinary engines of growth.
       </p>
-      <p class="about-text">
-        Daleon was created to deliver exactly that: talent, efficiency, standardization, and leadership — aligned with measurable growth.
+      <!-- COLUMNA DERECHA: TIMELINE STORY / KEY EXPANSION -->
+    <div class="about-sets-apart">
+      <div class="about-facts-card">
+        <h3>What sets us apart</h3>
+        <ul>
+          <li>Specialized in U.S. law firms (PI, Employment, Lemon Law, and more)</li>
+          <li>Bilingual talent fully embedded in your tools and processes</li>
+          <li>Data-driven onboarding, training, and performance monitoring</li>
+          <li>Flexible engagement models aligned with your growth stage</li>
+        </ul>
+      </div>
+    </div>
+  
+    </div>
+    
+      <!-- Tarjeta 2: Timeline Our Story / Key Expansion -->
+      <div class="about-timeline-card reveal" data-reveal-delay="0.08s">
+        <h3 class="about-timeline-title">Our Story &amp; Expansion</h3>
+        <ol class="about-timeline">
+          <li class="timeline-step">
+            <span class="timeline-index">01</span>
+            <div class="timeline-content">
+              <h4>Born in Colombia</h4>
+              <p>
+                Daleon was born in Colombia with a bold belief: Latin American talent — when trained with 
+                international standards, real leadership, and world-class technology — can compete directly in 
+                the most sophisticated markets in the world.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-step">
+            <span class="timeline-index">02</span>
+            <div class="timeline-content">
+              <h4>Supporting growing firms</h4>
+              <p>
+                We began by supporting small firms, solving urgent operational challenges in intake, case 
+                management, and back office work.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-step">
+            <span class="timeline-index">03</span>
+            <div class="timeline-content">
+              <h4>Key expansion into the U.S.</h4>
+              <p>
+                As clients placed their trust in us, we expanded into the U.S. market — bringing our methods, 
+                culture, and leadership-driven approach to a new level.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-step">
+            <span class="timeline-index">04</span>
+            <div class="timeline-content">
+              <h4>From support to evolution</h4>
+              <p>
+                Today, Daleon operates as a strategic nearshore growth partner that helps law firms, businesses, 
+                and startups scale without losing control. We don’t just support companies — we accelerate their evolution.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    </div>
+  </section>
+
+
+    <!-- MISSION & VISION -->
+<section class="section about-mv-section">
+  <div class="container about-mv-grid">
+
+    <!-- MISSION -->
+    <article class="about-mv-card reveal" data-reveal-delay="0.04s">
+      <span class="mv-kicker">Mission</span>
+      <h2 class="mv-title">To build teams capable of transforming companies.</h2>
+
+      <p>
+        Our mission is to provide our clients with highly trained talent, standardized processes, 
+        and a strong operational infrastructure that empowers any organization — large or small — 
+        to operate faster, smarter, and with less friction.
       </p>
 
-      <div class="about-promise-block">
-        <h3>Our Promise</h3>
-        <p>
-          To help you scale with discipline, talent, and vision — without losing control of your operations or inflating your internal costs.
-          We grow when you grow.
-        </p>
-      </div>
-    </section>
+      <ul class="mv-bullets">
+        <li>We create systems, not improvisations.</li>
+        <li>We deliver solutions, not patches.</li>
+        <li>We drive growth, not dependency.</li>
+      </ul>
+
+      <p class="mv-foot">
+        We exist to elevate performance and expand what companies believe they can achieve 
+        through nearshore excellence.
+      </p>
+    </article>
+
+    <!-- VISION -->
+    <article class="about-mv-card reveal" data-reveal-delay="0.10s">
+      <span class="mv-kicker">Vision</span>
+      <h2 class="mv-title">
+        To become the most trusted Latin American conglomerate for U.S. law firms, businesses, and startups.
+      </h2>
+
+      <p>
+        Recognized for transforming operations, professionalizing teams, and redefining what a 
+        nearshore partner can accomplish.
+      </p>
+
+      <p>
+        We aspire to be the headquarters of talent, leadership, and operational discipline in Latin America:
+      </p>
+
+      <ul class="mv-bullets">
+        <li>Where ideas become processes.</li>
+        <li>Processes become results.</li>
+        <li>Results become sustainable growth.</li>
+      </ul>
+    </article>
 
   </div>
 </section>
-   
+
+
+    <!-- CORE VALUES -->
+<section class="section about-pillars">
+  <div class="container">
+    <div class="section-header">
+      <h2>Core Values</h2>
+      <p>
+        These principles shape how we recruit, train, and lead every team we build for our clients.
+      </p>
+    </div>
+
+    <!-- Contenedor tipo “marquee” -->
+    <div class="pillars-marquee">
+      <div class="pillars-track">
+        <!-- Bloques originales -->
+        <article class="pillar-card">
+          <h3>Real Leadership</h3>
+          <p>
+            We make decisions grounded in clarity, data, and accountability.
+            Leadership is not a title — it’s a practice.
+          </p>
+        </article>
+
+        <article class="pillar-card">
+          <h3>Talent First</h3>
+          <p>
+            We invest in people, not positions. Talent is the engine of everything we build.
+          </p>
+        </article>
+
+        <article class="pillar-card">
+          <h3>Transparency</h3>
+          <p>
+            We communicate clearly and deliver exactly what we promise.
+          </p>
+        </article>
+
+        <article class="pillar-card">
+          <h3>Quality Without Excuses</h3>
+          <p>
+            We operate with U.S.-level standards, powered from Colombia.
+            Excellence is our baseline.
+          </p>
+        </article>
+
+        <article class="pillar-card">
+          <h3>Continuous Growth</h3>
+          <p>
+            Every process can improve. Every person can transcend.
+            We grow because we choose to.
+          </p>
+        </article>
+
+        <!-- DUPLICADOS para que el loop se vea continuo -->
+        <article class="pillar-card">
+          <h3>Real Leadership</h3>
+          <p>
+            We make decisions grounded in clarity, data, and accountability.
+            Leadership is not a title — it’s a practice.
+          </p>
+        </article>
+
+        <article class="pillar-card">
+          <h3>Talent First</h3>
+          <p>
+            We invest in people, not positions. Talent is the engine of everything we build.
+          </p>
+        </article>
+
+        <article class="pillar-card">
+          <h3>Transparency</h3>
+          <p>
+            We communicate clearly and deliver exactly what we promise.
+          </p>
+        </article>
+
+        <article class="pillar-card">
+          <h3>Quality Without Excuses</h3>
+          <p>
+            We operate with U.S.-level standards, powered from Colombia.
+            Excellence is our baseline.
+          </p>
+        </article>
+
+        <article class="pillar-card">
+          <h3>Continuous Growth</h3>
+          <p>
+            Every process can improve. Every person can transcend.
+            We grow because we choose to.
+          </p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- WHY WE EXIST / OUR PROMISE -->
+<section class="section why-daleon" id="why-daleon">
+  <div class="container">
+    <div class="section-header fade-up" data-delay="0s">
+      <h2>Why We Exist</h2>
+      <p>
+        The legal and business landscape in the United States has changed. Speed, technology, and
+        competition now demand structures that are smarter, leaner, and far more efficient.
+      </p>
+    </div>
+
+    <div class="why-grid">
+      <article class="why-card fade-up" data-delay="0.05s">
+        <h3>Our Role</h3>
+        <p>
+          Daleon was created to deliver exactly what modern organizations need:
+          talent, efficiency, standardization, and growth aligned with measurable results.
+        </p>
+        <p>
+          We help companies scale without chaos. We bring clarity where there is noise.
+          We strengthen teams so they can focus on what truly moves the needle.
+        </p>
+      </article>
+
+      <article class="why-card fade-up" data-delay="0.1s">
+        <h3>Our Promise</h3>
+        <p>
+          To be the strategic partner that helps you scale with discipline, talent, and vision —
+          without increasing your internal costs or losing operational control.
+        </p>
+        <p>
+          We grow when you grow. We believe in the power of work done with excellence.
+          And from Colombia, we’re building something far greater than a service —
+          we’re building a new way to operate.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+  <!-- FOOTER / CONTACT -->
+<footer class="footer" id="contact">
+  
+  <div class="footer-end" ></div>
+
+    <!-- LOWER CORPORATE FOOTER -->
+  
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Daleon Group</h3>
+        <p>
+          Nearshore Legal, Marketing, Sales & BPO solutions for U.S. law firms, startups, and growing businesses.  
+          Bilingual teams aligned with your strategy and growth.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Branches</h4>
+        <ul>
+          <li><a href="branches.html#legal">Daleon Legal Solutions</a></li>
+          <li><a href="branches.html#marketing">Daleon Marketing & Sales Solutions</a></li>
+          <li><a href="branches.html#sales">Daleon Tech Solutions</a></li>
+          <li><a href="branches.html#bpo">Daleon BPO Solutions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Nearshore Staffing</a></li>
+          <li><a href="#services">Digital Marketing</a></li>
+          <li><a href="#services">Sales & Lead Generation</a></li>
+          <li><a href="#services">BPO & Back Office</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>Email: <a href="mailto:info@daleongroup.com">sales@daleongroup.com</a></li>
+          <li><a href="#">Book a Call (Calendly)</a></li>
+          <li><a href="#">LinkedIn: Daleon Group LLC</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        © 2025 Daleon Group. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
 
